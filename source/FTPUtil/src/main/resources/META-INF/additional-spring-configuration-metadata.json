@@ -1,0 +1,122 @@
+{"properties": [
+  {
+    "name": "ftp.pass",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.pass'"
+  },
+  {
+    "name": "ftp.user",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.user'"
+  },
+  {
+    "name": "ftp.server",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.server'"
+  },
+  {
+    "name": "ftp.pollertime",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.pollertime'"
+  },
+  {
+    "name": "ftp.port",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.port'"
+  },
+  {
+    "name": "ftp.proxy.server",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.proxy.server'"
+  },
+  {
+    "name": "ftp.proxy.port",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.proxy.port'"
+  },
+  {
+    "name": "ftp.proxy.user",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.proxy.user'"
+  },
+  {
+    "name": "ftp.proxy.pass",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.proxy.pass'"
+  },
+  {
+    "name": "local.dir",
+    "type": "java.lang.String",
+    "description": "A description for 'local.dir'"
+  },
+  {
+    "name": "remote.dir",
+    "type": "java.lang.String",
+    "description": "A description for 'remote.dir'"
+  },
+  {
+    "name": "file.pattern",
+    "type": "java.lang.String",
+    "description": "A description for 'file.pattern'"
+  },
+  {
+    "name": "ftp.proxy.set",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.proxy.set'"
+  },
+  {
+    "name": "ftp.proxy.enable",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.proxy.enable'"
+  },
+  {
+    "name": "ftp.keep.file",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.keep.file'"
+  },
+  {
+    "name": "ftp.enable.commandline.log",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.enable.commandline.log'"
+  },
+  {
+    "name": "logs.path",
+    "type": "java.lang.String",
+    "description": "A description for 'logs.path'"
+  },
+  {
+    "name": "ftp.downloader.enable",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.downloader.enable'"
+  },
+  {
+    "name": "ftp.uploader.enable",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.uploader.enable'"
+  },
+  {
+    "name": "ftp.upload.remote.dir",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.upload.remote.dir'"
+  },
+  {
+    "name": "ftp.upload.local.dir",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.upload.local.dir'"
+  },
+  {
+    "name": "ftp.donwload.local.dir",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.donwload.local.dir'"
+  },
+  {
+    "name": "ftp.download.remote.dir",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.download.remote.dir'"
+  },
+  {
+    "name": "ftp.download.local.dir",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp.download.local.dir'"
+  }
+]}

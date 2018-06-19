@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>FTP File Downloader</title>
+
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+   <!-- Optional theme -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+</head>
+<body>
+<div class="container">
+   <h1>File downloader from FTP: Under Construction..</h1>
+
+<!--    <div class="alert alert-danger" id="notLoggedIn">Not logged in!</div>
+ -->
+   <div class="row">
+      <div class="col-md-6">
+         <div class="panel panel-default" id="login">
+            <div class="panel-heading">
+               <h3 class="panel-title">Save FTP Credentials</h3>
+            </div>
+            <div class="panel-body">
+               <form id="loginForm">
+                  <div class="form-group">
+                     <input type="text" class="form-control" id="ftpServer" placeholder="FTP Server Name"
+                            required name="ftpServerName">
+                  </div>
+                 
+                   <div class="form-group">
+                     <input type="text" class="form-control" id="ftpPort"
+                            placeholder="FTP Server Port" required name="ftpPort" value="21">
+                  </div>
+                  <div class="form-group">
+                     <input type="text" class="form-control" id="ftpUser"
+                            placeholder="FTP User Name" required name="ftpUser">
+                  </div>
+                   <div class="form-group">
+                     <input type="password" class="form-control" id="ftpServerPass"
+                            placeholder="FTP Password" required name="ftpServerPass">
+                  </div>
+                  
+                  <div class="checkbox">
+   							 <label><input type="checkbox" id="chkBoxEnableId"> Check if Proxy is enabled</label>
+  				  </div>
+  				  <div id="proxyEnabledId">
+		  				  <div class="form-group">
+		                     <input type="text" class="form-control" id="proxyServer" placeholder="Proxy Server Name"
+		                            required name="proxyServer">
+		                  </div>
+		                 
+		                   <div class="form-group">
+		                     <input type="text" class="form-control" id="proxyPort"
+		                            placeholder="Proxy Server Port" required name="proxyPort" value="21">
+		                  </div>
+		                  <div class="form-group">
+		                     <input type="text" class="form-control" id="proxyUser"
+		                            placeholder="Proxy User Name" required name="proxyUser">
+		                  </div>
+		                   <div class="form-group">
+		                     <input type="password" class="form-control" id="proxyServerPass"
+		                            placeholder="Proxy Password" required name="proxyServerPass">
+		                  </div>
+  				  </div>
+                  <!-- <div class="well">
+                     <ul>
+                        <li>admin & admin</li>
+                        <li>user & password</li>
+                        <li>disabled & password</li>
+                     </ul>
+                  </div> -->
+                  <button type="submit" class="btn btn-default" id="logoutButton">Save</button>
+               </form>
+            </div>
+         </div>
+
+      
+      </div>
+
+      <div class="col-md-6" id="responseId">
+       <div id="divId1"></div>
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Response From FTP Server:</h3>
+            </div>
+            <div class="panel-body">
+               <pre id="response" style="">
+              
+              2018-06-16 17:52:12  Login Successfully.
+              2018-06-16 17:52:12  Connected to FTP server.
+              2018-06-16 17:52:12  Found Files at FTP Server.
+              2018-06-16 17:52:12  Downloading Files From FTP Server.
+               </pre>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   
+</div>
+
+
+<!-- /.modal -->
+
+<script  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="js/client.js"></script>
+</body>
+</html>
