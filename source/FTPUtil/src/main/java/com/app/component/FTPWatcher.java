@@ -1,47 +1,76 @@
 package com.app.component;
 
-import java.time.LocalDateTime;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.app.util.FTPException;
-import com.app.util.FTPScheduler;
+import com.app.config.PropertiesConfig;
+import com.app.util.FTPDownloadScheduler;
+import com.app.util.FTPUploadScheduler;
 
 @Component
 public class FTPWatcher {
-	private Logger logger = Logger.getLogger(FTPWatcher.class);
+	private Logger logger = LogManager.getLogger("FTP-Watcher");
 	@Autowired
-	FTPScheduler ftpScheduler;
-
+	FTPDownloadScheduler ftpDownloadScheduler;
+	
+	@Autowired
+	FTPUploadScheduler ftpUploadScheduler;
+	@Autowired
+	PropertiesConfig propertiesConfig;
+	
 	public FTPWatcher() {
 	}
 
-	@Scheduled(fixedRateString = "${ftp.pollertime}")
-	public void create() {
-		final LocalDateTime start = LocalDateTime.now();
-		logger.info("....................................................................");
-		logger.info("::::::::::     Starting Pooling ... " + start+"  :::::::::");
+	@Scheduled(fixedRateString = "${ftp.download.pollertime}")
+	public void ftpDownloadScheduler() {
+		
+		if ("true".equals(propertiesConfig.ftpDownloaderEnable)) {
 
-		try {
-			ftpScheduler.toInvoke();
-		} catch (FTPException e) {
-			logger.error("Error : "+ e.getMessage());
-			//e.printStackTrace();
+			logger.info("Started Downloader.......");
+			final long startTime = System.currentTimeMillis();
+			logger.info("Starting Pooling Time ... " + startTime);
+			try {
+				ftpDownloadScheduler.toInvoke();
+			} catch (Exception e) {
+				logger.error("Exception at ftpDownloadScheduler() :" + e.fillInStackTrace());
+			}
+			final long endTime = System.currentTimeMillis();
+			final long totalTimeTaken = (endTime - startTime);
+			logger.info("Ending Pooling Time ... " + endTime);
+			logger.info("Downloader completed Polling  in " + totalTimeTaken + " (Seconds)");
+			logger.info("Finshed Downloader.......");
+		} else {
+			logger.info("Downloader session disabled.");
 		}
-		logger.info("::::::::::     Ending Pooling  ... " + start+"  :::::::::");
-		logger.info("....................................................................");
+
+	}
+	
+	@Scheduled(fixedRateString = "${ftp.upload.pollertime}",initialDelayString ="${ftp.download.pollertime}")
+	public void ftpUploadScheduler() {
+		if ("true".equals(propertiesConfig.ftpUploaderEnable)) {
+
+			final long startTime = System.currentTimeMillis();
+			logger.info("Started uploader....... Pooling Time ... " + startTime);
+			try {
+				ftpUploadScheduler.toInvoke();
+			} catch (Exception e) {
+				logger.error("Exception  at ftpUploadScheduler () " + e.getMessage());
+			}
+			final long endTime = System.currentTimeMillis();
+			final long totalTimeTaken = (endTime - startTime);
+			logger.info("Finishing Uploader....... Pooling Time ... " + endTime);
+			logger.info("Uploader completed Polling  in " + totalTimeTaken + " (Seconds)");
+		}else {
+			logger.info("Uploader session disabled.");
+
+		}
 
 	}
 
-	public FTPScheduler getFtpScheduler() {
-		return ftpScheduler;
-	}
-
-	public void setFtpScheduler(FTPScheduler ftpScheduler) {
-		this.ftpScheduler = ftpScheduler;
-	}
+	
+	
 
 }

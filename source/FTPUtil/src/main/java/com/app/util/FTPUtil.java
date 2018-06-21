@@ -5,11 +5,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import org.apache.log4j.Logger;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 /**
@@ -18,7 +19,7 @@ import org.apache.commons.net.ftp.FTPFile;
  *
  */
 public class FTPUtil {
-	protected Logger logger = Logger.getLogger(FTPUtil.class.getName());
+	protected Logger logger = LogManager.getLogger("FTPUtil");
 
 	public static void downloadDirectory(FTPClient ftpClient, String parentDir, String currentDir, String saveDir)
 			throws IOException {

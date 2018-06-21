@@ -10,16 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MessagesController {
-	
-	 
-    //@RequestMapping(value="/logmessages",produces = "text/html")
-   // @GetMapping(path = "/logmessages", produces = "text/html")
-	@GetMapping(value = "/logmessages", produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody String handle(String msg) {
-        return "Hello  "+new Date().toString();
-    }
+
+	@GetMapping(value = "/log", produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String handle(String msg) {
+		return "Hello  " + new Date().toString();
+	}
+
 	@RequestMapping("/hi")
-    public @ResponseBody String hiThere(){
-        return "hello world!";
-    }
+	public @ResponseBody String hiThere() {
+		return "hello Intakhab!";
+	}
 }
